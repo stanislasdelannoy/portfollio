@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Analysis — Stanislas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+  <!-- Navbar (même que sur la home) -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="../index.html#top" class="navbar__brand">Stanislas</a>
+      <nav class="navbar__menu">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO PROJET -->
+    <section class="section">
+        <div class="container">
+          <p class="hero__eyebrow">Data Analysis</p>
+          <h1 class="section-title">Olist sales analysis</h1>
+          <p class="section-subtitle">
+            👉 Exploratory analysis of Olist’s marketplace data to uncover how product categories and geographic patterns influence customer satisfaction and sales performance.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <div class="project-hero-media">
+          <img
+            src="../assets/data-analysis/olist_hero.jpeg"
+            alt="Olist hero presentation"
+            class="project-hero-image"
+          />
+        </div>
+
+        <!-- META (Role / Stack / Year) -->
+        <div style="margin-top: 24px;">
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Role</strong> — Data Analyst
+          </p>
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Stack</strong> — Python · Pandas · SQL · Visualization (searborn)
+          </p>
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Year</strong> — 2024
+          </p>
+        </div>
+
+        <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="../index.html#projects" class="btn btn--ghost">← Back to all projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <p>
+          This project investigates how customer review scores vary across Brazil and how these differences may influence sales performance.
+          The analysis focuses on geographic patterns—especially the impact of long delivery distances on customer satisfaction—while also exploring product categories,
+          which showed no significant effects in this dataset.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I DID -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I did</h2>
+        <ul>
+          <li>1. Récupérer et organiser les données.</li>
+          <p>
+            J’ai commencé par analyser le fonctionnement du marketplace Olist afin de comprendre son modèle économique et les leviers de profit.
+            Cette étape m’a conduit à explorer la base de données table par table (vendeurs, commandes, paiements, avis clients), afin d’identifier les relations clés et de construire une vision globale du cycle de vente.
+            Ce travail préparatoire a permis de poser un cadre clair avant toute analyse chiffrée. Une première piste d’analyse a consisté à explorer le rôle des vendeurs dans la performance du marketplace.
+            Toutefois, afin d’éviter toute interprétation réductrice ou biaisée à l’échelle individuelle, l’analyse a ensuite été réorientée vers des facteurs plus structurels.
+          </p>
+
+          <li>2. Définition du review_score comme variable clé.</li>
+          <p>
+            L’analyse s’est ensuite concentrée sur le review_score, considéré comme un indicateur central de la performance du marketplace.
+            Les notes laissées par les clients synthétisent plusieurs dimensions du parcours d’achat :
+            qualité perçue du produit, respect des délais de livraison et expérience globale.
+            En partant du principe qu’un mauvais score peut impacter la visibilité des vendeurs et,
+            indirectement, les ventes, le review_score a été utilisé comme variable principale pour orienter les analyses suivantes.
+          </p>
+
+
+          <li>3. Explorations initiales et limites rencontrées</li>
+          <p>
+            Après avoir défini le review_score comme variable centrale, plusieurs analyses exploratoires ont été menées
+            afin d’identifier les facteurs susceptibles d’expliquer les variations de satisfaction client.
+            Une attention particulière a été portée à l’étude des catégories de produits, avec l’hypothèse que certains types de produits pourraient être associés
+            à des scores plus faibles de manière récurrente. Des comparaisons ont ainsi été effectuées entre catégories,
+            en observant la distribution et la moyenne des review_scores.
+            Toutefois, cette analyse n’a pas permis de faire émerger de différences significatives ou de schémas stables entre catégories de produits.
+            Ce résultat a mis en évidence un signal faible sur cette dimension et a conduit à réorienter l’analyse vers des facteurs plus structurels.
+          </p>
+
+          <li>4. Analyse géographique et impact de la logistique sur les review scores</li>
+          <p>
+            L’analyse a été recentrée sur les facteurs géographiques en étudiant la relation entre la localisation des clients,
+            le wait_time (délai entre commande et livraison) et les review_scores.
+            Les résultats montrent une corrélation nette entre l’allongement des délais de livraison et la baisse des scores de satisfaction,
+            particulièrement marquée dans les zones les moins densément peuplées du Brésil.
+            Cette analyse met en évidence le rôle central du délai de livraison comme facteur opérationnel clé influençant l’expérience client.
+          </p>
+
+          <li>5. Synthèse</li>
+          <p>
+            Cette analyse montre que les délais de livraison constituent un levier central de la satisfaction client sur le marketplace Olist.
+            Les États présentant les wait_times les plus élevés affichent non seulement des review_scores plus faibles,
+            mais également une perte estimée entre <strong>35 et 50 BRL de revenus mensuels par vendeur</strong>, selon le modèle de financement d’Olist.
+            Ces résultats soulignent que les contraintes géographiques et logistiques ont un impact mesurable sur la performance économique du marketplace,
+            et qu’une optimisation des délais de livraison dans les zones les plus éloignées pourrait représenter un gain direct, à la fois en satisfaction client et en revenus.
+          </p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECH & TOOLS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tech & tools</h2>
+        <p>
+          <strong>Python</strong> pour la manipulation des données, <strong>Pandas</strong> pour le nettoyage et les agrégations,
+          <strong>SQL</strong> pour interroger des données structurées, ainsi que des bibliothèques de visualisation
+          (Matplotlib / Seaborn) afin de produire des graphiques clairs et lisibles.
+          L’ensemble de l’analyse a été réalisé dans un environnement notebook.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I LEARNED -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I learned</h2>
+        <p>
+          Ce projet m’a permis de renforcer ma capacité à transformer des données brutes et hétérogènes en jeux de données propres et exploitables.
+          J’ai également appris à structurer une analyse autour d’une question métier précise, en sélectionnant uniquement les indicateurs et visualisations réellement utiles pour y répondre.
+          Enfin, ce travail m’a appris à accepter l’absence de signal fort sur certaines hypothèses et à réorienter l’analyse vers des facteurs plus pertinents.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 Martin — Portfolio</p>
+    </div>
+  </footer>
+</body>
+</html>

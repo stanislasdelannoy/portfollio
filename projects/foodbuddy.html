@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Analysis — Stanislas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+  <!-- Navbar (même que sur la home) -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="../index.html#top" class="navbar__brand">Stanislas</a>
+      <nav class="navbar__menu">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO PROJET -->
+    <section class="section">
+        <div class="container">
+          <p class="hero__eyebrow">ML Engineer</p>
+          <h1 class="section-title">Foodbuddy</h1>
+          <p class="section-subtitle">
+            👉 Exploratory analysis of Olist’s marketplace data to uncover how product categories and geographic patterns influence customer satisfaction and sales performance.
+        </p>
+
+        <!-- HERO IMAGE -->
+        <div class="project-hero-media">
+          <img
+            src="../assets/data-analysis/olist_hero.jpeg"
+            alt="Olist hero presentation"
+            class="project-hero-image"
+          />
+        </div>
+
+        <!-- META (Role / Stack / Year) -->
+        <div style="margin-top: 24px;">
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Role</strong> — ML Engineer
+          </p>
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Stack</strong> — Python · Pandas · sklearn · tensorflow · GCP
+          </p>
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Year</strong> — 2024
+          </p>
+        </div>
+
+        <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="../index.html#projects" class="btn btn--ghost">← Retour aux projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <p>
+          Ce projet vise à proposer une application capable d’estimer la composition nutritionnelle d’un plat à partir d’une image,
+          puis de recommander des recettes adaptées aux besoins nutritionnels de l’utilisateur.
+          Il combine des techniques de computer vision, de machine learning et une interface interactive afin de relier
+          reconnaissance d’aliments, analyse nutritionnelle et recommandations personnalisées.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I DID -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I did</h2>
+        <ul>
+          <li>1. Exploration des données et choix du modèle de vision</li>
+          <p>
+            Le projet a débuté par l’exploration d’un premier jeu de données d’images alimentaires annotées,
+            initialement conçu pour entraîner un modèle de détection d’objets (Detectron).
+            L’analyse du dataset a mis en évidence plusieurs limites : annotations imprécises, forte hétérogénéité visuelle
+            et classes trop proches les unes des autres, ce qui rendait l’apprentissage du modèle peu robuste.
+          </p>
+
+          <li>2. Réorientation vers un modèle de classification plus adapté.</li>
+          <p>
+            Face à ces limitations, le choix a été fait de réorienter l’approche vers un modèle de classification d’images,
+            en utilisant MobileNet et un second jeu de données mieux structuré.
+            Ce modèle permettait d’identifier une centaine de types d’aliments distincts, offrant une reconnaissance plus stable
+            et mieux adaptée aux contraintes du projet.
+          </p>
+
+          <li>3. Mise en place d’un système de recommandation par KNN</li>
+          <p>
+           Dans un second temps, un algorithme de type KNN a été développé à partir d’un dataset d’environ 500 recettes,
+            chacune associée à un détail précis des apports nutritionnels.
+            À partir des besoins calculés pour l’utilisateur, ce modèle permet de recommander cinq recettes similaires,
+            dont les valeurs nutritionnelles correspondent le mieux aux objectifs définis.
+          </p>
+
+          <li>4. Calcul des besoins nutritionnels utilisateur</li>
+          <p>
+            Un formulaire interactif a été conçu afin de collecter les informations personnelles de l’utilisateur
+            (âge, poids, taille, niveau d’activité).
+            Ces données sont ensuite utilisées pour estimer les besoins nutritionnels quotidiens,
+            servant de base à l’analyse du plat et au système de recommandation.
+          </p>
+
+          <li>5. Développement de l’interface utilisateur avec Streamlit</li>
+          <p>
+            Enfin, une interface complète a été développée avec Streamlit afin de structurer l’expérience utilisateur.
+            L’application se compose de plusieurs pages : une première dédiée à la saisie des informations personnelles,
+            une seconde présentant le détail nutritionnel calculé, puis une page permettant de photographier un plat.
+            À partir de cette image, le modèle identifie les aliments présents, estime la composition de l’assiette
+            et propose des recommandations de recettes adaptées.
+          </p>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECH & TOOLS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tech & tools</h2>
+        <p>
+          <strong>Python</strong> pour l’ensemble de la logique applicative et des modèles,
+          <strong>TensorFlow / Keras</strong> pour l’entraînement et l’utilisation du modèle de classification d’images (MobileNet),
+          <strong>scikit-learn</strong> pour la mise en place de l’algorithme de recommandation par KNN,
+          ainsi que <strong>Pandas</strong> pour la manipulation des données nutritionnelles et des recettes.
+          Les données et les modèles ont été hébergés sur <strong>Google Cloud Platform (GCP)</strong>.
+          L’interface utilisateur a été développée avec <strong>Streamlit</strong>, permettant de construire une application interactive
+          intégrant reconnaissance d’images, calcul nutritionnel et recommandations personnalisées.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I LEARNED -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I learned</h2>
+        <p>
+          Ce projet m’a permis de mieux comprendre l’importance du choix des données et du modèle
+          dans un projet de vision par ordinateur.
+          J’ai appris à adapter l’approche technique en fonction des limites rencontrées,
+          plutôt que de forcer une solution peu pertinente.
+          Il m’a également permis de combiner plusieurs briques de machine learning au sein d’une application complète,
+          en reliant reconnaissance d’images, calcul nutritionnel et recommandations personnalisées dans une interface interactive.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 Martin — Portfolio</p>
+    </div>
+  </footer>
+</body>
+</html>
