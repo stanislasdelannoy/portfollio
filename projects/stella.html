@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stella Home — Stan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="../index.html#top" class="navbar__brand">Stan</a>
+      <nav class="navbar__menu">
+        <a href="../index.html#projects">Projets</a>
+        <a href="../index.html#about">À propos</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="section">
+      <div class="container">
+        <p class="hero__eyebrow">Mobile • Firebase • Produit</p>
+        <h1 class="section-title">Stella Home</h1>
+        <p class="section-subtitle">
+          Application mobile développée pour gérer les réservations d’une maison familiale à Stella Plage,
+          avec synchronisation en temps réel via Firebase.
+        </p>
+
+        <div class="project-hero-media">
+          <img
+            src="../assets/stella/hero.jpg"
+            alt="Plage de Stella"
+            class="project-hero-image"
+          />
+        </div>
+
+        <div style="margin-top: 24px;">
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Rôle</strong> — Développement mobile complet
+          </p>
+          <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
+            <strong>Stack</strong> — Flutter · Firebase · Firestore · iOS
+          </p>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <a href="../index.html#projects" class="btn btn--ghost">← Retour aux projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <p>
+          Suite à l’achat d’une maison familiale à Stella Plage, j’ai développé une application mobile
+          permettant de gérer les réservations et d’éviter les conflits de dates.
+          L’objectif était de proposer un outil simple, accessible à toute la famille,
+          synchronisé en temps réel et disponible directement sur iPhone.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I DID -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I did</h2>
+
+        <div class="project-steps">
+
+          <!-- STEP 1 -->
+          <div class="project-step">
+            <div class="project-step__text">
+              <h3>1. Développement mobile avec Flutter</h3>
+              <p>
+                L’application a été développée en Flutter afin de construire une interface mobile fluide
+                et moderne. Les principales fonctionnalités incluent la consultation du calendrier,
+                la création de réservations et la visualisation des séjours à venir.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img src="../assets/stella/stella_resa.jpeg"
+                   alt="Écran de réservation Stella Home">
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="project-step project-step--reverse">
+            <div class="project-step__text">
+              <h3>2. Mise en place de la base de données Firestore</h3>
+              <p>
+                Une base de données NoSQL a été hébergée sur Firebase / Firestore.
+                La structure repose sur une collection de réservations,
+                permettant un stockage flexible et une synchronisation en temps réel
+                entre les différents utilisateurs de l’application.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img src="../assets/stella/firestore.png"
+                   alt="Console Firestore - base de données">
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="project-step">
+            <div class="project-step__text">
+              <h3>3. Connexion front mobile ↔ base de données</h3>
+              <p>
+                L’application est connectée directement à Firestore.
+                Chaque réservation créée ou modifiée est instantanément mise à jour
+                pour tous les utilisateurs. Cette synchronisation garantit la cohérence
+                des données et évite les conflits de planning.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img src="../assets/stella/homepage.png"
+                   alt="Calendrier des réservations">
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="project-step project-step--reverse">
+            <div class="project-step__text">
+              <h3>4. Compilation et déploiement iOS</h3>
+              <p>
+                Une fois l’application finalisée, elle a été compilée et exportée
+                en application iOS. Cela m’a permis de gérer les certificats,
+                la configuration Xcode et le packaging mobile jusqu’à une version utilisable
+                directement sur iPhone.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <div style="
+                width:100%;
+                height: 220px;
+                border-radius: 18px;
+                border: 1px solid var(--border-subtle);
+                background: radial-gradient(circle at top left, rgba(120,80,200,0.2), transparent 60%), var(--bg-elevated);
+              "></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH & TOOLS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tech & tools</h2>
+        <p>
+          <strong>Flutter</strong> pour le développement mobile cross-platform,
+          <strong>Dart</strong> pour la logique applicative,
+          <strong>Firebase Authentication</strong> pour la gestion des utilisateurs,
+          <strong>Cloud Firestore</strong> comme base de données NoSQL en temps réel,
+          et <strong>Xcode</strong> pour la compilation et le déploiement iOS.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT I LEARNED -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">What I learned</h2>
+        <p>
+          Ce projet m’a permis de développer une application mobile complète,
+          depuis l’interface jusqu’au stockage des données et au déploiement.
+          J’ai appris à structurer une base NoSQL adaptée à un cas d’usage réel,
+          à gérer la synchronisation en temps réel et à mener un projet
+          jusqu’à une application installable sur iOS.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 Stan — Portfolio</p>
+    </div>
+  </footer>
+
+</body>
+</html>

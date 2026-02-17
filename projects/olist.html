@@ -44,7 +44,7 @@
             <strong>Role</strong> — Data Analyst
           </p>
           <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
-            <strong>Stack</strong> — Python · Pandas · SQL · Visualization (searborn)
+            <strong>Stack</strong> — Python · Pandas · SQL · Visualization (seaborn)
           </p>
           <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
             <strong>Year</strong> — 2024
@@ -60,69 +60,90 @@
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Overview</h2>
+        <h2 class="section-title">Vue d'ensemble</h2>
         <p>
-          This project investigates how customer review scores vary across Brazil and how these differences may influence sales performance.
-          The analysis focuses on geographic patterns—especially the impact of long delivery distances on customer satisfaction—while also exploring product categories,
-          which showed no significant effects in this dataset.
+          Ce projet analyse les variations des review scores clients à travers le Brésil et cherche à comprendre comment ces différences peuvent influencer la performance des ventes.
+          L’étude se concentre principalement sur les dynamiques géographiques — notamment l’impact des longues distances de livraison sur la satisfaction client
+          tout en explorant également les catégories de produits, qui n’ont pas révélé d’effets significatifs dans ce jeu de données.
         </p>
       </div>
     </section>
 
     <!-- WHAT I DID -->
     <section class="section">
-      <div class="container">
-        <h2 class="section-title">What I did</h2>
-        <ul>
-          <li>1. Récupérer et organiser les données.</li>
-          <p>
-            J’ai commencé par analyser le fonctionnement du marketplace Olist afin de comprendre son modèle économique et les leviers de profit.
-            Cette étape m’a conduit à explorer la base de données table par table (vendeurs, commandes, paiements, avis clients), afin d’identifier les relations clés et de construire une vision globale du cycle de vente.
-            Ce travail préparatoire a permis de poser un cadre clair avant toute analyse chiffrée. Une première piste d’analyse a consisté à explorer le rôle des vendeurs dans la performance du marketplace.
-            Toutefois, afin d’éviter toute interprétation réductrice ou biaisée à l’échelle individuelle, l’analyse a ensuite été réorientée vers des facteurs plus structurels.
-          </p>
+  <div class="container">
+    <h2 class="section-title">What I did</h2>
 
-          <li>2. Définition du review_score comme variable clé.</li>
-          <p>
-            L’analyse s’est ensuite concentrée sur le review_score, considéré comme un indicateur central de la performance du marketplace.
-            Les notes laissées par les clients synthétisent plusieurs dimensions du parcours d’achat :
-            qualité perçue du produit, respect des délais de livraison et expérience globale.
-            En partant du principe qu’un mauvais score peut impacter la visibilité des vendeurs et,
-            indirectement, les ventes, le review_score a été utilisé comme variable principale pour orienter les analyses suivantes.
-          </p>
+    <div class="project-steps">
 
-
-          <li>3. Explorations initiales et limites rencontrées</li>
+      <!-- STEP 1 -->
+      <div class="project-step">
+        <div class="project-step__text">
+          <h3>1. Structuration et modélisation des données</h3>
           <p>
-            Après avoir défini le review_score comme variable centrale, plusieurs analyses exploratoires ont été menées
-            afin d’identifier les facteurs susceptibles d’expliquer les variations de satisfaction client.
-            Une attention particulière a été portée à l’étude des catégories de produits, avec l’hypothèse que certains types de produits pourraient être associés
-            à des scores plus faibles de manière récurrente. Des comparaisons ont ainsi été effectuées entre catégories,
-            en observant la distribution et la moyenne des review_scores.
-            Toutefois, cette analyse n’a pas permis de faire émerger de différences significatives ou de schémas stables entre catégories de produits.
-            Ce résultat a mis en évidence un signal faible sur cette dimension et a conduit à réorienter l’analyse vers des facteurs plus structurels.
+            J’ai commencé par analyser le fonctionnement du marketplace Olist en étudiant chaque table
+            (orders, sellers, customers, reviews, payments). Les jointures ont permis de reconstruire
+            le cycle complet d’une commande et de créer des variables dérivées telles que le <strong>wait_time</strong>.
+            Une première piste d’analyse a consisté à explorer le rôle des vendeurs,
+            avant de réorienter l’étude vers des facteurs plus structurels.
           </p>
-
-          <li>4. Analyse géographique et impact de la logistique sur les review scores</li>
-          <p>
-            L’analyse a été recentrée sur les facteurs géographiques en étudiant la relation entre la localisation des clients,
-            le wait_time (délai entre commande et livraison) et les review_scores.
-            Les résultats montrent une corrélation nette entre l’allongement des délais de livraison et la baisse des scores de satisfaction,
-            particulièrement marquée dans les zones les moins densément peuplées du Brésil.
-            Cette analyse met en évidence le rôle central du délai de livraison comme facteur opérationnel clé influençant l’expérience client.
-          </p>
-
-          <li>5. Synthèse</li>
-          <p>
-            Cette analyse montre que les délais de livraison constituent un levier central de la satisfaction client sur le marketplace Olist.
-            Les États présentant les wait_times les plus élevés affichent non seulement des review_scores plus faibles,
-            mais également une perte estimée entre <strong>35 et 50 BRL de revenus mensuels par vendeur</strong>, selon le modèle de financement d’Olist.
-            Ces résultats soulignent que les contraintes géographiques et logistiques ont un impact mesurable sur la performance économique du marketplace,
-            et qu’une optimisation des délais de livraison dans les zones les plus éloignées pourrait représenter un gain direct, à la fois en satisfaction client et en revenus.
-          </p>
-        </ul>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/data-analysis/structure base.png" alt="Schema base Olist">
+        </div>
       </div>
-    </section>
+
+      <!-- STEP 2 -->
+      <div class="project-step project-step--reverse">
+        <div class="project-step__text">
+          <h3>2. Définition du review_score comme variable centrale</h3>
+          <p>
+            Le <strong>review_score</strong> a été choisi comme indicateur clé de performance,
+            car il synthétise la qualité perçue, le respect des délais et l’expérience globale.
+            L’objectif était d’identifier les facteurs expliquant ses variations.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/data-analysis/corr.png" alt="Correlation heatmap">
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="project-step">
+        <div class="project-step__text">
+          <h3>3. Analyse géographique et impact du délai</h3>
+          <p>
+            L’analyse montre une corrélation négative significative entre le <strong>wait_time</strong>
+            et le review_score. Les États les plus éloignés présentent des délais plus longs
+            et des scores plus faibles, confirmant l’impact logistique sur la satisfaction client.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/data-analysis/schema.png" alt="Distance and delivery time by state">
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="project-step project-step--reverse">
+        <div class="project-step__text">
+          <h3>4. Impact business</h3>
+          <p>
+            Les États présentant les délais les plus élevés affichent une perte estimée
+            entre <strong>35 et 50 BRL de revenus mensuels par vendeur</strong>.
+            Cette analyse relie contraintes géographiques, logistique et performance économique.
+          </p>
+        </div>
+
+        <div class="project-step__media">
+          <img src="../assets/data-analysis/review_cost.png"
+          alt="Impact du délai de livraison sur le review score et le revenu par État">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- TECH & TOOLS -->
     <section class="section">
@@ -140,7 +161,7 @@
     <!-- WHAT I LEARNED -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">What I learned</h2>
+        <h2 class="section-title">Ce que j'ai appris</h2>
         <p>
           Ce projet m’a permis de renforcer ma capacité à transformer des données brutes et hétérogènes en jeux de données propres et exploitables.
           J’ai également appris à structurer une analyse autour d’une question métier précise, en sélectionnant uniquement les indicateurs et visualisations réellement utiles pour y répondre.
@@ -152,7 +173,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© 2025 Martin — Portfolio</p>
+      <p>© 2025 Stanislas — Portfolio</p>
     </div>
   </footer>
 </body>

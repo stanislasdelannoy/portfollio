@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Martin — Portfolio</title>
+  <title>Stanislas — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./style/style.css" />
 </head>
@@ -10,10 +10,10 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="#top" class="navbar__brand">Martin</a>
+      <a href="#top" class="navbar__brand">Stanislas</a>
       <nav class="navbar__menu">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
+        <a href="#projects">Projets</a>
+        <a href="#about">À propos</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -25,24 +25,26 @@
       <div class="container hero__inner">
         <div class="hero__text">
           <p class="hero__eyebrow">Portfolio</p>
-          <h1 class="hero__title">Building data & AI projects with a clean developer mindset.</h1>
+          <h1 class="hero__title">Des projets data & IA, avec une approche dev propre et pragmatique.</h1>
           <p class="hero__subtitle">
-            I’m Martin, a junior developer focused on data, machine learning and AI-powered web apps.
+            Je suis Stanislas, profil orienté data engineering / data science, avec un socle full‑stack Python.
           </p>
           <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">View projects</a>
-            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+            <a href="#projects" class="btn btn--primary">Voir les projets</a>
+            <a href="#contact" class="btn btn--ghost">Me contacter</a>
           </div>
         </div>
+
         <div class="hero__panel">
           <div class="hero-card">
             <p class="hero-card__label">Focus</p>
-            <p class="hero-card__value">Data • ML • Web + IA</p>
+            <p class="hero-card__value">Data • ML • Full‑stack</p>
             <div class="hero-card__tags">
               <span>Python</span>
               <span>SQL</span>
+              <span>Pandas</span>
               <span>FastAPI</span>
-              <span>Next.js</span>
+              <span>React</span>
             </div>
           </div>
         </div>
@@ -53,54 +55,68 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Selected projects</h2>
+          <h2 class="section-title">Projets sélectionnés</h2>
           <p class="section-subtitle">
-            Three personal projects that show how I work with data, machine learning and AI on the web.
+            Trois projets data/ML et une app mobile : une vue rapide de ce que je construis en pratique.
           </p>
         </div>
 
         <div class="projects-grid">
-          <!-- Data Analysis -->
+          <!-- Olist -->
           <article class="project-card">
-        <a class="project-card__link" href="./projects/olist.html">
-          <div class="project-card__content">
-            <p class="project-card__eyebrow">Data Analysis</p>
-            <h3 class="project-card__title">Retail sales insights</h3>
-            <p class="project-card__description">
-              End-to-end analysis of retail sales data to surface trends, seasonality and actionable KPIs.
-            </p>
-            <p class="project-card__meta">Python • Pandas • SQL • Viz</p>
-          </div>
-        </a>
-      </article>
+            <a class="project-card__link" href="./projects/olist.html">
+              <div class="project-card__content">
+                <p class="project-card__eyebrow">Data Analysis</p>
+                <h3 class="project-card__title">Olist — avis clients & logistique</h3>
+                <p class="project-card__description">
+                  Analyse des notes clients au Brésil et mise en évidence de l’impact des délais de livraison (wait_time) sur la satisfaction.
+                </p>
+                <p class="project-card__meta">Python • Pandas • SQL • Data Viz</p>
+              </div>
+            </a>
+          </article>
 
-      <!-- Machine Learning -->
-      <article class="project-card">
-        <a class="project-card__link" href="./projects/machine-learning.html">
-          <div class="project-card__content">
-            <p class="project-card__eyebrow">Machine Learning</p>
-            <h3 class="project-card__title">Customer churn prediction</h3>
-            <p class="project-card__description">
-              Supervised model to identify at-risk customers with a focus on explainability and metrics.
-            </p>
-            <p class="project-card__meta">scikit-learn • Metrics • Pipeline</p>
-          </div>
-        </a>
-      </article>
+          <!-- FoodBuddy -->
+          <article class="project-card">
+            <a class="project-card__link" href="./projects/foodbuddy.html">
+              <div class="project-card__content">
+                <p class="project-card__eyebrow">Machine Learning</p>
+                <h3 class="project-card__title">FoodBuddy — nutrition & recommandation</h3>
+                <p class="project-card__description">
+                  Application Streamlit : calcul des besoins nutritionnels + recommandations de recettes (KNN) et brique vision (MobileNet / Food101).
+                </p>
+                <p class="project-card__meta">TensorFlow • scikit‑learn • Streamlit • GCP</p>
+              </div>
+            </a>
+          </article>
 
-      <!-- Yalla -->
-      <article class="project-card">
-        <a class="project-card__link" href="./projects/yalla.html">
-          <div class="project-card__content">
-            <p class="project-card__eyebrow">Web + AI</p>
-            <h3 class="project-card__title">Yalla — AI-assisted trip planner</h3>
-            <p class="project-card__description">
-              A web app that combines a clean UI and AI to help people organise trips collaboratively.
-            </p>
-            <p class="project-card__meta">Next.js • FastAPI • OpenAI</p>
-          </div>
-        </a>
-      </article>
+          <!-- Yalla -->
+          <article class="project-card">
+            <a class="project-card__link" href="./projects/yalla.html">
+              <div class="project-card__content">
+                <p class="project-card__eyebrow">Full‑stack</p>
+                <h3 class="project-card__title">Yalla — planification de voyages</h3>
+                <p class="project-card__description">
+                  Refonte d’une app collaborative (API Python + front React). Les fonctionnalités IA sont en conception et seront ajoutées au fur et à mesure.
+                </p>
+                <p class="project-card__meta">FastAPI • SQLAlchemy • React • PostgreSQL</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Stella Home -->
+          <article class="project-card">
+            <a class="project-card__link" href="./projects/stella.html">
+              <div class="project-card__content">
+                <p class="project-card__eyebrow">Mobile</p>
+                <h3 class="project-card__title">Stella Home — réservations familiales</h3>
+                <p class="project-card__description">
+                  App Flutter connectée à Firebase/Firestore pour gérer un calendrier de réservations et éviter les conflits de dates.
+                </p>
+                <p class="project-card__meta">Flutter • Firebase • Firestore • iOS</p>
+              </div>
+            </a>
+          </article>
         </div>
       </div>
     </section>
@@ -109,15 +125,15 @@
     <section id="about" class="section">
       <div class="container about">
         <div class="about__text">
-          <h2 class="section-title">About</h2>
+          <h2 class="section-title">À propos</h2>
           <p>
-            I’m a junior developer currently focusing on data engineering, machine learning and AI-powered
-            web applications. I like shipping small, clear projects that solve a specific problem and
-            iterating quickly.
+            Je me forme et je pratique au quotidien sur des sujets data : préparation et structuration de données,
+            exploration/visualisation, features, et premiers modèles ML. J’aime construire des projets de bout en bout,
+            en gardant une base “dev” propre (architecture, lisibilité, itérations).
           </p>
           <p>
-            This portfolio is a simple snapshot of the things I’m building as I learn: data analysis,
-            ML experiments and a full-stack app using AI.
+            Ce portfolio regroupe mes projets perso actuels. Il est mis à jour au fur et à mesure (nouveaux écrans,
+            améliorations techniques, et prochaines fonctionnalités).
           </p>
         </div>
       </div>
@@ -129,34 +145,28 @@
         <div class="section-header">
           <h2 class="section-title">Contact</h2>
           <p class="section-subtitle">
-            Want to talk about a project, an internship or just say hi? Drop me a message.
+            Pour une alternance, un CDI, ou simplement échanger : voici où me joindre.
           </p>
         </div>
 
-        <form class="contact-form">
-          <div class="contact-form__row">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@email.com" required />
-            </label>
-          </div>
-          <label class="contact-form__full">
-            <span>Message</span>
-            <textarea name="message" rows="4" placeholder="What would you like to talk about?"></textarea>
-          </label>
-          <button type="submit" class="btn btn--primary">Send message</button>
-        </form>
+        <div class="contact-links" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <!-- Remplace les # par tes vrais liens -->
+          <a class="btn btn--primary" href="mailto:ton.email@example.com">Email</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">CV</a>
+        </div>
+
+        <p style="margin-top:14px; color: var(--muted); font-size: 14px;">
+          Astuce : tu peux remplacer les liens ci‑dessus par tes URLs (LinkedIn/GitHub/CV) et ton email.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© 2025 Martin — Portfolio</p>
+      <p>© 2025 Stanislas — Portfolio</p>
     </div>
   </footer>
 </body>

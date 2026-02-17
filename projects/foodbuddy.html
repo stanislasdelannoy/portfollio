@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Data Analysis — Stanislas</title>
+  <title>FoodBuddy — Stan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../style/style.css" />
 </head>
 <body>
-  <!-- Navbar (même que sur la home) -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="../index.html#top" class="navbar__brand">Stanislas</a>
+      <a href="../index.html#top" class="navbar__brand">Stan</a>
       <nav class="navbar__menu">
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projets</a>
+        <a href="../index.html#about">À propos</a>
         <a href="../index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO PROJET -->
+    <!-- HERO -->
     <section class="section">
-        <div class="container">
-          <p class="hero__eyebrow">ML Engineer</p>
-          <h1 class="section-title">Foodbuddy</h1>
-          <p class="section-subtitle">
-            👉 Exploratory analysis of Olist’s marketplace data to uncover how product categories and geographic patterns influence customer satisfaction and sales performance.
+      <div class="container">
+        <p class="hero__eyebrow">Machine Learning • Recommandation • Produit</p>
+        <h1 class="section-title">FoodBuddy</h1>
+        <p class="section-subtitle">
+          Une application interactive qui calcule les besoins nutritionnels d’un utilisateur et recommande des recettes adaptées,
+          avec une brique de reconnaissance d’aliments (vision) et une brique de recommandation (KNN).
         </p>
 
         <!-- HERO IMAGE -->
         <div class="project-hero-media">
           <img
-            src="../assets/data-analysis/olist_hero.jpeg"
-            alt="Olist hero presentation"
+            src="../assets/foodbuddy/hero.png"
+            alt="Capture d'écran de FoodBuddy (page d'accueil)"
             class="project-hero-image"
           />
         </div>
 
-        <!-- META (Role / Stack / Year) -->
         <div style="margin-top: 24px;">
           <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
-            <strong>Role</strong> — ML Engineer
+            <strong>Rôle</strong> — ML / Dév Python (projet en équipe)
           </p>
           <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
-            <strong>Stack</strong> — Python · Pandas · sklearn · tensorflow · GCP
+            <strong>Stack</strong> — Python · TensorFlow/Keras · scikit-learn · Pandas · Streamlit · GCP
           </p>
           <p style="margin: 4px 0; font-size: 14px; color: var(--muted);">
-            <strong>Year</strong> — 2024
+            <strong>Périmètre</strong> — Vision (classification) + Reco (KNN) + App Streamlit
           </p>
         </div>
 
@@ -62,10 +62,10 @@
       <div class="container">
         <h2 class="section-title">Overview</h2>
         <p>
-          Ce projet vise à proposer une application capable d’estimer la composition nutritionnelle d’un plat à partir d’une image,
-          puis de recommander des recettes adaptées aux besoins nutritionnels de l’utilisateur.
-          Il combine des techniques de computer vision, de machine learning et une interface interactive afin de relier
-          reconnaissance d’aliments, analyse nutritionnelle et recommandations personnalisées.
+          FoodBuddy a été conçu comme une application “end-to-end” : collecter les informations personnelles,
+          estimer les besoins nutritionnels, puis proposer des recommandations de repas à partir d’un jeu de recettes structuré.
+          Le projet inclut également une brique de vision par ordinateur : une première tentative orientée détection (Detectron)
+          a été abandonnée au profit d’une classification plus robuste (MobileNet / Food101).
         </p>
       </div>
     </section>
@@ -74,48 +74,105 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">What I did</h2>
-        <ul>
-          <li>1. Exploration des données et choix du modèle de vision</li>
-          <p>
-            Le projet a débuté par l’exploration d’un premier jeu de données d’images alimentaires annotées,
-            initialement conçu pour entraîner un modèle de détection d’objets (Detectron).
-            L’analyse du dataset a mis en évidence plusieurs limites : annotations imprécises, forte hétérogénéité visuelle
-            et classes trop proches les unes des autres, ce qui rendait l’apprentissage du modèle peu robuste.
-          </p>
 
-          <li>2. Réorientation vers un modèle de classification plus adapté.</li>
-          <p>
-            Face à ces limitations, le choix a été fait de réorienter l’approche vers un modèle de classification d’images,
-            en utilisant MobileNet et un second jeu de données mieux structuré.
-            Ce modèle permettait d’identifier une centaine de types d’aliments distincts, offrant une reconnaissance plus stable
-            et mieux adaptée aux contraintes du projet.
-          </p>
+        <div class="project-steps">
+          <!-- STEP 1 -->
+          <div class="project-step">
+            <div class="project-step__text">
+              <h3>1. Exploration du dataset Detectron et identification des limites</h3>
+              <p>
+                Le projet a démarré avec un dataset d’images alimentaires détourées et annotées pour un modèle Detectron.
+                En pratique, les annotations étaient souvent imprécises (objets confondus, masques/boîtes incohérents) et
+                la variabilité des images était trop forte, ce qui rendait l’entraînement instable et difficile à généraliser.
+                Cette étape a été utile pour poser un diagnostic clair et éviter de “forcer” une approche inadaptée.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img
+                src="../assets/foodbuddy/detectron_bad_annotations.png"
+                alt="Exemple d'annotations Detectron trop bruitées"
+              />
+            </div>
+          </div>
 
-          <li>3. Mise en place d’un système de recommandation par KNN</li>
-          <p>
-           Dans un second temps, un algorithme de type KNN a été développé à partir d’un dataset d’environ 500 recettes,
-            chacune associée à un détail précis des apports nutritionnels.
-            À partir des besoins calculés pour l’utilisateur, ce modèle permet de recommander cinq recettes similaires,
-            dont les valeurs nutritionnelles correspondent le mieux aux objectifs définis.
-          </p>
+          <!-- STEP 2 -->
+          <div class="project-step project-step--reverse">
+            <div class="project-step__text">
+              <h3>2. Pivot vers une approche classification (MobileNet + Food101)</h3>
+              <p>
+                Nous avons réorienté la brique vision vers une classification d’images, plus adaptée au besoin.
+                Le dataset Food101 (100 classes) permet une reconnaissance plus stable d’aliments (ex : purée, gyozas, etc.).
+                L’objectif était d’obtenir une prédiction fiable sur un ensemble de classes bien défini, plutôt qu’une détection
+                fragile sur des images trop hétérogènes.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img
+                src="../assets/foodbuddy/food101_samples.png"
+                alt="Aperçu du dataset Food101"
+              />
+            </div>
+          </div>
 
-          <li>4. Calcul des besoins nutritionnels utilisateur</li>
-          <p>
-            Un formulaire interactif a été conçu afin de collecter les informations personnelles de l’utilisateur
-            (âge, poids, taille, niveau d’activité).
-            Ces données sont ensuite utilisées pour estimer les besoins nutritionnels quotidiens,
-            servant de base à l’analyse du plat et au système de recommandation.
-          </p>
+          <!-- STEP 3 -->
+          <div class="project-step">
+            <div class="project-step__text">
+              <h3>3. Construction du moteur de recommandation (KNN) sur un dataset de recettes</h3>
+              <p>
+                Un algorithme KNN a été mis en place à partir d’un dataset d’environ 500 recettes,
+                avec des apports nutritionnels détaillés (macros et micros). La préparation a consisté à standardiser
+                les colonnes, filtrer les variables pertinentes et structurer un tableau “modèle-ready” afin de recommander
+                5 recettes proches des besoins nutritionnels calculés.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img
+                src="../assets/foodbuddy/knn_recipes_dataset.png"
+                alt="Extrait du dataset de recettes (features nutritionnelles) utilisé pour le KNN"
+              />
+            </div>
+          </div>
 
-          <li>5. Développement de l’interface utilisateur avec Streamlit</li>
-          <p>
-            Enfin, une interface complète a été développée avec Streamlit afin de structurer l’expérience utilisateur.
-            L’application se compose de plusieurs pages : une première dédiée à la saisie des informations personnelles,
-            une seconde présentant le détail nutritionnel calculé, puis une page permettant de photographier un plat.
-            À partir de cette image, le modèle identifie les aliments présents, estime la composition de l’assiette
-            et propose des recommandations de recettes adaptées.
-          </p>
-        </ul>
+          <!-- STEP 4 -->
+          <div class="project-step project-step--reverse">
+            <div class="project-step__text">
+              <h3>4. Calcul des besoins nutritionnels et parcours utilisateur</h3>
+              <p>
+                Une première page Streamlit permet de saisir les informations personnelles (âge, taille, poids, niveau d’activité)
+                afin d’estimer les besoins quotidiens. Ces besoins servent ensuite de référence pour contextualiser l’analyse et
+                alimenter la recommandation de recettes.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <img
+                src="../assets/foodbuddy/streamlit_form.png"
+                alt="Formulaire Streamlit pour calculer les besoins nutritionnels"
+              />
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="project-step">
+            <div class="project-step__text">
+              <h3>5. Déploiement (prototype) et limites actuelles</h3>
+              <p>
+                Les données et les modèles ont été hébergés sur Google Cloud Platform (GCP) pour un prototype.
+                L’instance n’est plus accessible aujourd’hui suite à la fin du crédit d’essai, mais la page projet est maintenue
+                et sera mise à jour si une nouvelle version est redéployée.
+              </p>
+            </div>
+            <div class="project-step__media">
+              <!-- bloc visuel léger, volontairement sans image -->
+              <div style="
+                width:100%;
+                height: 220px;
+                border-radius: 18px;
+                border: 1px solid var(--border-subtle);
+                background: radial-gradient(circle at top left, rgba(95,139,255,0.18), transparent 60%), var(--bg-elevated);
+              "></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -124,13 +181,12 @@
       <div class="container">
         <h2 class="section-title">Tech & tools</h2>
         <p>
-          <strong>Python</strong> pour l’ensemble de la logique applicative et des modèles,
-          <strong>TensorFlow / Keras</strong> pour l’entraînement et l’utilisation du modèle de classification d’images (MobileNet),
-          <strong>scikit-learn</strong> pour la mise en place de l’algorithme de recommandation par KNN,
-          ainsi que <strong>Pandas</strong> pour la manipulation des données nutritionnelles et des recettes.
-          Les données et les modèles ont été hébergés sur <strong>Google Cloud Platform (GCP)</strong>.
-          L’interface utilisateur a été développée avec <strong>Streamlit</strong>, permettant de construire une application interactive
-          intégrant reconnaissance d’images, calcul nutritionnel et recommandations personnalisées.
+          <strong>Python</strong> pour l’ensemble de la logique applicative et des pipelines,
+          <strong>TensorFlow / Keras</strong> pour la classification d’images (MobileNet),
+          <strong>scikit-learn</strong> pour le moteur de recommandation par KNN,
+          <strong>Pandas</strong> pour la préparation et la structuration des datasets nutritionnels,
+          et <strong>Streamlit</strong> pour l’interface utilisateur.
+          Les données et les modèles ont été hébergés sur <strong>Google Cloud Platform (GCP)</strong> (prototype).
         </p>
       </div>
     </section>
@@ -140,12 +196,10 @@
       <div class="container">
         <h2 class="section-title">What I learned</h2>
         <p>
-          Ce projet m’a permis de mieux comprendre l’importance du choix des données et du modèle
-          dans un projet de vision par ordinateur.
-          J’ai appris à adapter l’approche technique en fonction des limites rencontrées,
-          plutôt que de forcer une solution peu pertinente.
-          Il m’a également permis de combiner plusieurs briques de machine learning au sein d’une application complète,
-          en reliant reconnaissance d’images, calcul nutritionnel et recommandations personnalisées dans une interface interactive.
+          Ce projet m’a appris à prendre du recul sur le choix d’un modèle et d’un dataset : plutôt que de persister sur une
+          approche peu robuste, j’ai appris à justifier un pivot technique (Detectron → classification) en fonction de la qualité
+          des données. Il m’a aussi permis de relier plusieurs briques (vision, calcul nutritionnel, recommandation) dans une
+          application cohérente, et de structurer un dataset “feature-ready” pour un algorithme de recommandation.
         </p>
       </div>
     </section>
@@ -153,7 +207,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© 2025 Martin — Portfolio</p>
+      <p>© 2025 Stan — Portfolio</p>
     </div>
   </footer>
 </body>

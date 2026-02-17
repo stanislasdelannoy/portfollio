@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yalla — Stanislas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="../index.html#top" class="navbar__brand">Stanislas</a>
+    <nav class="navbar__menu">
+      <a href="../index.html#projects">Projets</a>
+      <a href="../index.html#about">À propos</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <p class="hero__eyebrow">Fullstack • API • Produit collaboratif</p>
+    <h1 class="section-title">Yalla</h1>
+    <p class="section-subtitle">
+      Plateforme web de planification de voyages permettant de créer des itinéraires collaboratifs,
+      organiser des activités par jour et visualiser les trajets sur carte.
+    </p>
+
+    <div class="project-hero-media">
+      <img src="../assets/yalla/hero.png"
+           alt="Page d'accueil Yalla"
+           class="project-hero-image">
+    </div>
+
+    <div style="margin-top:24px;">
+      <p style="font-size:14px;color:var(--muted);">
+        <strong>Stack</strong> — FastAPI · Ruby on Rails · PostgreSQL · jQuery · Bootstrap · Google Maps
+      </p>
+    </div>
+
+    <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="../index.html#projects" class="btn btn--ghost">
+        ← Retour aux projets
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Overview</h2>
+    <p>
+      Yalla est une application de planification de voyages permettant aux utilisateurs
+      de créer des itinéraires personnalisés, collaborer avec des amis et organiser leurs activités
+      sous forme de colonnes par jour (UX inspirée de Trello).
+      Le projet combine un backend API développé en FastAPI et une application web en Ruby on Rails.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT I DID -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">What I did</h2>
+
+    <div class="project-steps">
+
+      <!-- BACKEND FASTAPI -->
+      <div class="project-step">
+        <div class="project-step__text">
+          <h3>1. Développement du backend API (FastAPI)</h3>
+          <p>
+            J’ai développé une API REST en FastAPI permettant de gérer les entités principales :
+            utilisateurs, voyages, activités, invitations et votes.
+            L’API expose des endpoints sécurisés et documentés via Swagger,
+            facilitant les tests et l’intégration frontend.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <!-- <img src="../assets/yalla/swagger.png"
+               alt="Documentation Swagger de l'API FastAPI"> -->
+        </div>
+      </div>
+
+      <!-- TRIP BOARD -->
+      <div class="project-step project-step--reverse">
+        <div class="project-step__text">
+          <h3>2. Interface de planification drag & drop</h3>
+          <p>
+            L’interface principale permet d’organiser les activités par jour
+            grâce à un système de drag & drop dynamique (jQuery UI).
+            Chaque modification est persistée en base et reflétée en temps réel.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/yalla/browse.png"
+               alt="Interface principale de planification">
+        </div>
+      </div>
+
+      <!-- MAP -->
+      <div class="project-step">
+        <div class="project-step__text">
+          <h3>3. Visualisation cartographique</h3>
+          <p>
+            Intégration de Google Maps pour afficher les activités
+            et optimiser la compréhension géographique du voyage.
+            Les marqueurs sont générés dynamiquement via endpoint JSON.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/yalla/trips.png"
+               alt="Carte interactive du voyage">
+        </div>
+      </div>
+
+      <!-- AUTH & SOCIAL -->
+      <div class="project-step project-step--reverse">
+        <div class="project-step__text">
+          <h3>4. Authentification & collaboration</h3>
+          <p>
+            Mise en place d’une authentification via Devise et OmniAuth (Facebook).
+            Gestion des participants, invitations par email et votes sur les activités,
+            permettant une vraie planification collaborative.
+          </p>
+        </div>
+        <div class="project-step__media">
+          <img src="../assets/yalla/sign_up.png"
+               alt="Page d'inscription">
+        </div>
+      </div>
+
+      <!-- REFONTE -->
+      <div class="project-step">
+        <div class="project-step__text">
+          <h3>5. Architecture et évolutions</h3>
+          <p>
+            Le projet a évolué progressivement vers une architecture plus structurée,
+            avec séparation claire entre API backend (FastAPI) et application web (Rails).
+            Certaines itérations récentes ont été accélérées grâce à des outils d’assistance au code,
+            tout en conservant l’architecture et la logique métier développées initialement.
+          </p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- TECH & TOOLS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Tech & tools</h2>
+    <p>
+      <strong>FastAPI</strong> pour le backend REST,
+      <strong>Ruby on Rails 7</strong> pour l’application web,
+      <strong>Bootstrap</strong> pour le design responsive,
+      <strong>jQuery</strong> pour les interactions dynamiques (drag & drop),
+      <strong>PostgreSQL</strong> comme base relationnelle,
+      <strong>Devise + OmniAuth</strong> pour l’authentification,
+      <strong>Google Maps API</strong> pour la visualisation cartographique.
+    </p>
+
+  </div>
+</section>
+
+<!-- ROADMAP IA -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Évolutions prévues</h2>
+    <p>
+      Le projet est en cours d’évolution avec l’intégration future de fonctionnalités IA :
+      recommandations d’activités optimisées selon les trajets,
+      génération automatique de planning intelligent,
+      suggestions contextuelles entre deux points du voyage.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2025 Stanislas — Portfolio</p>
+  </div>
+</footer>
+
+</body>
+</html>
