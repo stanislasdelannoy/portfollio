@@ -6,6 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./style/style.css" />
 </head>
+<script>
+  const copyBtn = document.getElementById("copyEmail");
+  const message = document.getElementById("copyMessage");
+
+  copyBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const email = "contact@email.com";
+
+    navigator.clipboard.writeText(email).then(() => {
+      message.classList.add("show");
+
+      setTimeout(() => {
+        message.classList.remove("show");
+      }, 2000);
+    });
+  });
+</script>
 <body>
   <!-- Navbar -->
   <header class="navbar">
@@ -151,15 +169,15 @@
 
         <div class="contact-links" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
           <!-- Remplace les # par tes vrais liens -->
-          <a class="btn btn--primary" href="mailto:ton.email@example.com">Email</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn--ghost" href="#" target="_blank" rel="noopener">CV</a>
+          <a href="#contact" id="copyEmail">Email : stanislas.delannoy@outlook.fr</a>
+          <span id="copyMessage" class="copy-message">
+            Mail copié !
+          </span>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/stanislas-delannoy-alternance-data/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://github.com/stanislasdelannoy" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href="./assets/CV_SDelannoy.docx" download>CV</a>
         </div>
 
-        <p style="margin-top:14px; color: var(--muted); font-size: 14px;">
-          Astuce : tu peux remplacer les liens ci‑dessus par tes URLs (LinkedIn/GitHub/CV) et ton email.
-        </p>
       </div>
     </section>
   </main>

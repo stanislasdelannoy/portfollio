@@ -566,3 +566,20 @@ a {
     order: unset;
   }
 }
+
+.copy-message {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 14px;
+}
+
+.copy-message.show {
+  opacity: 1;
+}
